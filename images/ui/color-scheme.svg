@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="658">
+  <rect width="720" height="240" fill="#009688"/>
+  <text x="29.679" y="50.715" fill="#fff" font-size="30" font-family="Roboto">Primary – Teal</text>
+  <text x="29.899" y="210.715" fill="#fff" font-size="30" font-family="Roboto">500</text>
+  <text x="688.591" y="210.715" fill="#fff" font-size="30" font-family="Roboto" text-anchor="end">#009688</text>
+  <g>
+    <rect width="720" height="80" y="248" fill="#00796b"/>
+    <text x="31.026" y="298.715" fill="#fff" font-size="30" font-family="Roboto">700</text>
+    <text x="688.62" y="298.715" fill="#fff" font-size="30" font-family="Roboto" text-anchor="end">#00796B</text>
+  </g>
+  <g>
+    <rect width="720" height="80" y="328" fill="#00695c"/>
+    <text x="30.514" y="378.715" fill="#fff" font-size="30" font-family="Roboto">800</text>
+    <text x="688.269" y="378.715" fill="#fff" font-size="30" font-family="Roboto" text-anchor="end">#00695C</text>
+  </g>
+  <g>
+    <rect width="720" height="240" y="418" fill="#eeff41"/>
+    <text x="31.744" y="468.715" fill="#424242" font-size="30" font-family="Roboto">Accent – Lime</text>
+    <text x="31.744" y="628.715" fill="#424242" font-size="30" font-family="Roboto">A200</text>
+    <text x="688.65" y="628.715" fill="#424242" font-size="30" font-family="Roboto" text-anchor="end">#EEFF41</text>
+  </g>
+</svg>
