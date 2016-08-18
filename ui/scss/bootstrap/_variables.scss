@@ -1,0 +1,59 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+$md-primary:            #009688 !default; // Teal 500
+$md-accent:             #eeff41 !default; // Lime A200
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-size-base:          14px !default;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    50px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:             #fff !default;
+$navbar-inverse-bg:                $md-primary !default;
+$navbar-inverse-border:            darken($navbar-inverse-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 #fff !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
+
+
+//== Navs
+//
+//##
+
+//== Tabs
+$nav-tabs-border-color:                     transparent !default;
+
+$nav-tabs-link-hover-border-color:          $md-primary !default;
+
+$nav-tabs-active-link-hover-bg:             $md-primary !default;
+$nav-tabs-active-link-hover-color:          #fff !default;
+
+$nav-tabs-justified-link-border-color:            $nav-tabs-border-color !default;
+$nav-tabs-justified-active-link-border-color:     $md-accent !default;

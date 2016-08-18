@@ -1,0 +1,21 @@
+{
+  "name": "estagio",
+  "description": "Estágio de conclusão de curso UDESC Ceplan",
+  "main": "",
+  "authors": [
+    "Gilberto Tavares <camaleaun@gmail.com> (https://camaleaun.github.io/)"
+  ],
+  "license": "ISC",
+  "homepage": "https://camaleaun.github.io/estagio/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^3.3.7"
+  }
+}

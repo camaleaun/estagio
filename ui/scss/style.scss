@@ -1,0 +1,83 @@
+// Core variables and mixins
+//@import "twbs/bootstrap/variables";
+@import "bootstrap/variables";
+
+// Components
+@import "bootstrap/navbar";
+
+body {
+  margin-top: $navbar-height;
+}
+
+.nav-tabs-top {
+  background-color: $navbar-inverse-bg;
+  margin-bottom: $navbar-margin-bottom;
+  text-transform: uppercase;
+
+  .nav {
+
+    > li {
+
+      > a {
+        color: #99d5cf;
+        &:hover,
+        &:focus {
+          color: #fff;
+          background-color: $md-primary;
+        }
+      }
+    }
+  }
+
+  .nav-tabs {
+    //border-bottom: 1px solid $nav-tabs-border-color;
+    > li {
+
+      // Actual tabs (as links)
+      > a {
+        &:hover {
+          border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+        }
+      }
+
+      // Active state, and its :hover to override normal :hover
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $nav-tabs-active-link-hover-color;
+          background-color: $nav-tabs-active-link-hover-bg;
+        }
+      }
+    }
+  }
+
+  .nav-justified {
+    > li {
+      display: table-cell;
+      width: 1%;
+      > a {
+        margin-bottom: 0;
+      }
+    }
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border: 1px solid $nav-tabs-justified-link-border-color;
+    }
+
+    > li > a {
+      border-bottom: 1px solid $nav-tabs-justified-link-border-color;
+      border-radius: 0;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border-bottom-color: $nav-tabs-justified-active-link-border-color;
+    }
+
+  }
+}
+
+
