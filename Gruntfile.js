@@ -43,7 +43,19 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'bower_components/bootstrap/dist/js/',
             src: ['bootstrap*'],
-            dest: 'ui/js'
+            dest: 'ui/js/'
+          },
+          {
+            expand: true,
+            cwd: 'bower_components/material-design-lite/',
+            src: ['material.{css,css.map,min.css}'],
+            dest: 'ui/css/'
+          },
+          {
+            expand: true,
+            cwd: 'bower_components/material-design-lite/',
+            src: ['material.{js,js.map,min.js}'],
+            dest: 'ui/js/'
           }
         ]
       }
