@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI (in TWBS)</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Compras</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-tabs-top">
+
+    <div class="container">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="presentation" class="active"><a href="#atacado" aria-controls="atacado" role="tab" data-toggle="tab">Atacado</a></li>
+        <li role="presentation"><a href="#eletronicos" aria-controls="eletronicos" role="tab" data-toggle="tab">Eletrônicos</a></li>
+        <li role="presentation"><a href="#bijuterias" aria-controls="bijuterias" role="tab" data-toggle="tab">Bijuterias</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="atacado"></div>
+        <div role="tabpanel" class="tab-pane" id="eletronicos"></div>
+        <div role="tabpanel" class="tab-pane" id="bijuterias"></div>
+      </div>
+
+  </div>
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
