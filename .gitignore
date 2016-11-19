@@ -1,0 +1,12 @@
+/node_modules/
+/bases/
+*.aux
+*.bbl
+*.blg
+*.idx
+*.log
+*.toc
+*.lot
+*.lof
+*.loq
+/*.pdf
