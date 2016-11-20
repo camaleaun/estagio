@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         command: 'rm *.aux *.bbl *.blg *.idx *.log *.toc *.lot *.lof *.loq'
       },
       pdf: {
-        command: 'mv paper.pdf ../ && git checkout gh-pages && mv paper.pdf && mv ../paper.pdf ./ && git add paper.pdf && git commit -m "New papper pdf" && git push && git checkout paper'
+        command: 'mv paper.pdf ../ && git checkout gh-pages && rm paper.pdf && mv ../paper.pdf ./ && git add paper.pdf && git commit -m "New papper pdf" && git push && git checkout paper'
       }
     },
 
