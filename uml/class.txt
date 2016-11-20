@@ -1,0 +1,24 @@
+@startuml
+
+skinparam monochrome true
+skinparam classBackgroundColor WhiteSmoke|White
+hide private members
+
+package "Sistema Lista de Compras" <<Frame>> {
+  class User {
+    - String revenue
+    - String email
+    - String born
+    - String login
+    - String password
+    + void setRevenue(String revenue)
+    + void setEmail(String email)
+    + void setBorn(String date)
+    + void setLogin(String login)
+    + void setPassword(String password)
+    + void setLogin(String login)
+    + String getPassword()
+  }
+}
+
+@enduml

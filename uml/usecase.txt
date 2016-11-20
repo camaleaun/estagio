@@ -1,0 +1,24 @@
+@startuml
+
+skinparam monochrome true
+skinparam usecaseBackgroundColor WhiteSmoke|White
+
+left to right direction
+actor comprador
+actor funcionário
+rectangle "Lista de Compras" {
+  comprador --- (seleciona lista)
+  comprador --- (visualiza lista)
+  comprador --- (adiciona item)
+  comprador --- (edita item)
+  comprador --- (remove item)
+  comprador --- (marca comprado)
+  comprador --- (encerra lista)
+  (seleciona lista) --- funcionário
+  (visualiza lista) --- funcionário
+  (adiciona item) --- funcionário
+  (edita item) --- funcionário
+  (remove item) --- funcionário
+}
+
+@enduml
