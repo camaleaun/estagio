@@ -42,6 +42,8 @@
   {\normalfont}{\uppercase{\thesection}}{1em}{\MakeUppercase}
 \titleformat{\subsection}[block]
   {\normalfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]
+  {\normalfont}{\thesubsubsection}{1em}{}
 %\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
 %\titleformat{\subsection}
 %  {\normalfont\fontsize{12}{15}\bfseries}{\subsectionNumber~\thesubsection}{1em}{}
