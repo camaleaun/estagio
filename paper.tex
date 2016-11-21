@@ -256,10 +256,88 @@ Na Figura \ref{fig:planilha} é possível visualizar a planilha descrita nesta s
 
 \chapter{Solução Proposta}
 
+Neste capítulo encontram-se: o levantamento, o projeto lógico e finda com o projeto do sistema.
+
+\section{Levantamento}
+
+Nesta seção estão expostos a visão geral do sistema e a engenharia de requisitos, para a etapa de análise do sistema eles se fazem necessários.
+
+\subsection{Visão Geral do Sistema}
+
+O sistema é uma aplicação para gerenciar os itens de compras, onde o usuário pode gerir listas (adicionar, editar ou remover itens), além de ser possível por usuários atribuídos marcar itens como comprados ou encerrar as listas. O acesso deverá ter algum processo de autenticação de usuário.
+
+\subsubsection{Descrição dos usuários}
+
+Na utilização do sistema podem ser descritos os seguintes usuários envolvidos:
+\begin{itemize}
+\item Funcionário: usuário que mantêm as listas, adicionando, editando e removendo itens;
+\item Comprador: nível de acesso funcionário que pode realizar atividades além, que incluem marcar ou desmarcar itens como comprados e encerrar listas.
+\end{itemize}
+
+\subsection{Premissas e Restrições}
+
+A construção dos requisitos do sistema terá a premissa e restrição listada abaixo:
+\begin{itemize}
+\item Premissa 1: Terá como base do sistema a planilha atualmente utilizada, cedida pela empresa;
+\item Restrição 1: Acesso deve ser permitido somente por usuários cadastrados.
+\end{itemize}
+
+\subsection{Engenharia de Requisitos}
+
+Como explicado por \citeonline{sommerville2011}, neste processo são acordados e especificados os detalhes que satisfazem os envolvidos. Há dois níveis de detalhamento dessa especificação, um para clientes e usuários outro aos desenvolvedores, alto nível e abrangente respectivamente.
+
+Requisitos Funcionais
+
+\subsubsection{Requisitos Funcionais}
+
+Estes descrevem o que o sistema deve fazer, normalmente são descritos de modo abstrato para a fácil compreensão por seus usuários \cite{sommerville2011}. Puderam para o \textit{software} Buyer ser levantados os requisitos funcionais que seguem:
+\begin{enumerate}
+\item $[$RF001$]$ Realizar a adição de itens;
+\item $[$RF002$]$ Manter as listas de itens;
+\item $[$RF003$]$ Alternar o \textit{status} de compra dos itens;
+\item $[$RF004$]$ Realizar encerramento das listas (manter itens não comprados);
+\item $[$RF005$]$ Realizar autenticação para permitir o acesso.
+\end{enumerate}
+
+\subsubsection{Requisitos Não funcionais}
+
+
+Segundo \citeonline{sommerville2011} são requisitos relacionados não diretamente as funcionalidades oferecidas aos usuários pelo sistema. Descrevem esse requisitos como: confiabilidade, desempenho, proteção ou disponibilidade.
+Foram definidos para o \textit{software} Buyer os requisitos não funcionar à seguir:
+\begin{enumerate}
+\item $[$RNF001$]$ Acessível por navegadores, inclusive \textit{mobile};
+\item $[$RNF002$]$ Interface intuitiva e minimalista;
+\item $[$RNF003$]$ Tratamento em uso desconectado.
+\end{enumerate}
+
+\section{Projeto Lógico}
+
+Nesta seção tem-se a elaboração de documentos do projeto, fase importante para melhor entendimento do sistema em desenvolvimento. Inclui-se nas seguintes subseções os diagramas UML e a modelagem da base de dados.
+
+\subsection{Diagramas UML}
+
+Foram desenvolvidos os diagramas de casos de uso e de classes.
+
+\subsubsection{Diagrama de Casos de Uso}
+
+De modo simplificado e com clareza a Figura \ref{fig:usecase} apresenta as atividade do \textit{software} Buyer.
+
 \begin{figure}[h]
 \caption{Diagrama de Casos de Uso}\label{fig:usecase}
 \centering
-\includegraphics[width=\textwidth,keepaspectratio]{figures/usecase.pdf}
+\includegraphics{figures/usecase.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+\subsubsection{Diagrama de Classes}
+
+
+A Figura \ref{fig:classes} ilustra o diagrama de classes do \textit{software} Buyer.
+
+\begin{figure}[h]
+\caption{Diagrama de Classes}\label{fig:classes}
+\centering
+\includegraphics{figures/classes.pdf}
 \caption*{\footnotesize Fonte: Produção do autor, 2016.}
 \end{figure}
 

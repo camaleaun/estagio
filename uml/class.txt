@@ -1,24 +1,82 @@
 @startuml
 
 skinparam monochrome true
+skinparam usecaseBackgroundColor WhiteSmoke|White
+
+skinparam monochrome true
 skinparam classBackgroundColor WhiteSmoke|White
 hide private members
+hide empty members
 
 package "Sistema Lista de Compras" <<Frame>> {
-  class User {
-    - String revenue
-    - String email
-    - String born
-    - String login
-    - String password
-    + void setRevenue(String revenue)
-    + void setEmail(String email)
-    + void setBorn(String date)
-    + void setLogin(String login)
-    + void setPassword(String password)
-    + void setLogin(String login)
-    + String getPassword()
+  namespace firebase {
+    /'interface UserInfo {
+      {static} # string displayName
+      {static} # string email
+      {static} # photoURL
+      {static} # providerId
+      {static} # string uid
+    }'/
+    interface User {
+      {static} + string displayName
+      {static} + string email
+      /'{static} + boolean emailVerified
+      {static} + array providerData
+      {static} + providerId
+      {static} + refreshToken'/
+      {static} + uid
+      /'{static} + void delete()
+      {static} + string getToken(boolean opt_forceRefresh)
+      {static} + User link(AuthCredential credential)
+      {static} + UserCredential linkWithPopup(AuthProvider provider)
+      {static} + void linkWithRedirect(AuthProvider provider)
+      {static} + void reload()
+      {static} + User unlink(string providerId)
+      {static} + void updateEmail(string newEmail)
+      {static} + void updatePassword(string newPassword)
+      {static} + void updateProfile(profile)'/
+    }
+    /'UserInfo <|.. User
+    namespace auth {
+      interface AuthCredential {
+        {static} + string provider
+      }
+      interface UserCredential {
+        {static} + string UserCredential
+      }
+      interface AuthProvider {
+        {static} + string provider
+      }
+      firebase.User <|.. AuthCredential
+      firebase.User <|.. UserCredential
+      firebase.User <|.. AuthProvider
+    }'/
   }
+  class List {
+    - name
+    + string getName();
+    + string setName(string name);
+    + string updateName(string name);
+  }
+  class Item {
+    - int id
+    - string description
+    - User uid
+    - timestamp modified
+    - int status
+    + int getId()
+    + void setId(int id)
+    + string getDescription()
+    + void setUser(uid)
+    + getUser()
+    + void setModified(timestamp modified)
+    + timestamp getModified()
+    + void setModified(timestamp modified)
+    + int getStatus()
+    + void setStatus(int status)
+  }
+  List "3" --"0..*" Item
+  Item <|. firebase.User
 }
 
 @enduml

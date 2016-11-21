@@ -188,6 +188,8 @@
 %\settocdepth{section}
 %\setsecnumdepth{subsubsection}
 %\setsecnumdepth{section}
+\settocdepth{subsubsection}
+\setsecnumdepth{subsubsection}
 
 \setlength{\cftbeforechapterskip}{0em}
 
