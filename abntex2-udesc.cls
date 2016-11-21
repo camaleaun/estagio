@@ -182,7 +182,7 @@
 %\patchcmd{\l@section}{#1}{\MakeTextUppercase{#1}}{}{}
 \renewcommand{\cftsectionfont}{\rmfamily}
 \renewcommand{\cftsubsectionfont}{\rmfamily\bfseries}
-\renewcommand{\cftsubsubsectionfont}{\rmfamily\bfseries}
+\renewcommand{\cftsubsubsectionfont}{\rmfamily}
 
 % TODO Ajustar tabulação no sumários
 
@@ -190,8 +190,9 @@
 %\settocdepth{section}
 %\setsecnumdepth{subsubsection}
 %\setsecnumdepth{section}
-\settocdepth{subsubsection}
-\setsecnumdepth{subsubsection}
+%\settocdepth{subsubsection}
+%\setsecnumdepth{subsubsection}
+\setcounter{tocdepth}{4}
 
 \setlength{\cftbeforechapterskip}{0em}
 
