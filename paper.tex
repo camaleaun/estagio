@@ -18,6 +18,7 @@
 \usepackage{graphicx} % Inclusão de gráficos
 \usepackage{microtype} % para melhorias de justificação
 \usepackage[singlelinecheck=false]{caption}
+\usepackage{pdfpages}
 
 \usepackage[alf,abnt-emphasize=bf,abnt-full-initials=yes,abnt-etal-cite=2]{abntex2cite}	% Citações padrão ABNT
 
@@ -350,9 +351,127 @@ Possivelmente o mais utilizado, além de importante é apoio para alguns dos dem
 \caption*{\footnotesize Fonte: Produção do autor, 2016.}
 \end{figure}
 
+\subsubsection{Modelagem Conceitual da Base de Dados}
+
+A modelagem conceitual é descrita por \citeonline{heuser2009} como primeira etapa do projeto de banco de dados, seu objetivo é obter descrição abstrata dos dados, independente da implementação computacional que for realizada. A técnica mais difundida utiliza o modelo entidade-relacionamento (modelo ER), sua representação gráfica utiliza diagrama próprio.
+
+O diagrama do modelo ER do software Buyer se encontra representado na Figura \ref{fig:me}.
+
+\begin{figure}[h]
+\caption{Diagrama Entidade-Relacionamento}\label{fig:me}
+\centering
+\includegraphics{figures/mer.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+Será mostrado na seção \ref{subsec:mer} o maior detalhamento destas entidade e deste relacionamento.
+
+\section{Projeto do Sistema}
+
+Para o desenvolvimento foram buscadas tecnologias web, como linguagem de marcação e estilo para interface gráfica e JavaScript (ECMAScript). Esta escolha para a codificação foi tomada para permitir menor utilização de servidor permitindo uso do processamento no lado cliente, e também por conhecimento prévio.
+
+Devido à sua execução local mas descentralizada foi planejado a utilização de uma application program interface (API), seria desenvolvida em PHP dentro do Wordpres que é Content Management System (CMS), que vem tornando esta uma funcionalidade nativa em suas últimas versões. Essa API seria REST respondendo as requisições em JSON, naturalmente compatível com a linguagem de programação utilizada.
+
+Houve um atraso considerável por essa decisão prévia não ter tido apoio dentro da empresa. Seria necessária a contratação de um servidor de hospedagem e domínio, pois a empresa ainda não possui website. Por ser um pilar do desenvolvimento foi necessário após a falta de aprovação o estudo de outra solução, onde a curva de aprendizagem não permitiu a rápida absorção dentro do cronograma estabelecido.
+
+Por opção, o editor de texto Brackets foi utilizado, pode ser visto na Figura \ref{fig:brackets}. O Brackets desenvolvido de forma aberta pela Adobe junto a comunidade se utiliza tecnologias atuais como Node.js, ambiente gráfico (baseado HTML, CSS) no mesmo motor do navegador Chromium, etc.
+
+\begin{figure}[h]
+\caption{Editor de textos Brackets}\label{fig:brackets}
+\centering
+\includegraphics[width=.5\textwidth,keepaspectratio]{figures/brackets.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+Como Sistema Gerenciador de Banco de Dados (SGDB) foi pretendida a utilização do MySQL, inclusive por ser o qual é utilizado pelo CMS Wordpress. Como mencionado anteriormente essa solução teve que ser descartada, encontrando como opção o Firebase. O Firebase, recentemente comprado pelo Google, é uma base de dados distribuída em tempo real, armazenada em infraestrutura própria com documentação e bibliotecas para uso em web e principais sistemas mobile.
+
+\subsection{Base de Dados}\label{subsec:mer}
+
+Desenvolvido com base nos diagramas UML e na modelagem conceitual do banco de dados, obteve-se como resultado o diagrama que pode ser visto na Figura \ref{fig:er}.
+
+\begin{figure}[h]
+\caption{Diagrama ER gerado no MySQL Workbench}\label{fig:er}
+\centering
+\includegraphics[width=.4\textwidth,keepaspectratio]{figures/er.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+\subsection{Interface do Usuário}
+
+Foi desenvolvida de maneira minimalista a interface que pode ser conferida na Figura 8, baseada nos conceitos do Google Material Design e utilizando a biblioteca oficial Material Design Lite (MDL).
+ dados, obteve-se como resultado o diagrama que pode ser visto na Figura \ref{fig:ui}.
+
+\begin{figure}[h]
+\caption{Interface com o Usuário}\label{fig:ui}
+\centering
+\includegraphics[width=.5\textwidth,keepaspectratio]{figures/buyer.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+\section{Acesso \textit{Offline}}
+
+Com auxílio de \textbf{\textit{Service Workers}} (SW) é possível resolver a navegação \textit{offline}. Está sendo desenvolvido, como explica \citeonline{swfirstdraft}, por um esforço colaborativo entre grandes empresas como Google, Mozilla e outras, sua implementação tem sido constante principalmente nos navegadores Chrome e Firefox. Realmente excitante para os interessados na competição entre \textit{web} e aplicações nativas nos sistemas operacionais.
+
+\begin{figure}[h]
+\caption{HTML destacando o registro do SW}\label{fig:swregister}
+\centering
+\includegraphics{figures/html.pdf}
+\caption*{\footnotesize Fonte: Produção do autor, 2016.}
+\end{figure}
+
+Sua implementação no modo mais básico em uma aplicação de página única pode ser considerada simples. Porém sua versatilidade e aplicabilidade é incrivelmente mais extensa. Inicialmente é necessário informar ao navegar o arquivo JavaScript que será o controlador, se comportando como se fosse um \textit{proxy} local. Para isso utiliza-se o comando de registro (conforme Figura \ref{fig:swregister}), após testar se o navegador é compatível.
+
+\begin{quadro}[h]
+\caption{Conteúdo do arquivo SW}\label{fig:swjs}
+\centering
+\centering
+\includegraphics{figures/sw.pdf}
+\caption*{\ifdraft{\color{green}}{}\footnotesize Fonte: Produção do autor, 2016.}
+\end{quadro}
+
+Dentro do arquivo \texttt{sw.js}, notável em Figura \ref{fig:swjs}, constam dois eventos: um de instalação para quando o navegador instala (\textbf{\textit{install}}) de acordo com o registro e outra para captura de ação de rede (\textbf{\textit{fetch}}), onde iria naturalmente requisitar determinado recurso. No evento de instalação lista os arquivos a serem armazenados e no de rede indica a utilizar os arquivos armazenados.
+
+Durante o trabalho tem utilizada a denominação ``navegador moderno'' para nosso estudo são navegadores que apostam em novas tecnologia que estejam surgindo. Normalmente podem ser considerados o Google Chrome, Mozilla Firefox e Opera. A Microsoft vêm flexibilizando essas adoções nas últimas versões e do seu subistituto o Edge, porém quando tecnologias ainda em rascunho ela opta por sua definição e maturidade. A Figura \ref{fig:swcompatibility} apresenta como está, mesmo que parcial, essa compatibilidade. Ressaltando o quão recente é essa adoção, as versões lançadas somente neste ano como estáveis entre 9 de setembro e 23 de outubro, são nesses navegadores a primeira implementação ocorrida. Apenas o Google Chrome para \textit{desktop} possui compabilidade nas versões anteriores, desde 2 de maio também deste ano.
+
+\begin{figure}[h]
+\centering
+  \caption{Suporte à SW pelos navegadores}\label{fig:swcompatibility}
+\begin{tabular}{ C{46pt} | C{46pt} | C{46pt} | C{46pt} | C{46pt} | C{46pt} | C{46pt} }\hline
+Edge & Firefox & Chrome & Safari & Opera & iOS & Android \\ \hline
+ & 49+ & 49+ &  & 41+ &  & 5.0+ \\ \hline
+\end{tabular}
+  \caption*{\footnotesize Fonte: Produção do autor, baseado em \citeonline{swcaniuse}.}
+\end{figure}
+
+Algumas observações são necessárias sobre a Figura \ref{fig:swcompatibility}, o Microsoft \textbf{Edge} está nessa compatibilidade como ``em desenvolvimento'', e o Internet Explorer (IE) foi intencionamente ignorado por certamente nunca receber essa implementação já que seu desenvolvimento foi descontinuado em favor do Edge. O \textbf{Safari} da Apple utiliza motor Webkit e ele está com a situação, quanto essa compatibilidade, como ``sob consideração''. E o \textbf{Android} 4.4.4 já utilizava WebView do Chrome mas só na 5.0 veio nativa e independente, porém instalar a última versão do Google Chrome para esse sistema operacional \textit{mobile} tem o mesmo efeito, desde WebView ou navegador na versão 53.
+
+\chapter{Considerações Finais}
+
+A resistência em automatização em pequenos comércios é uma realidade. Nem em situações em que o custo é mínimo e as vantagens são evidentemente mensuradas há o apoio necessário.
+No Anexo I consta a proposta para definição de um domínio na internet e contratação do serviço de hospedagem, que devido a outras prioridades não foi devidamente apreciado. Devido a esta falta de aprovação foi aqui considerado como negado, pelo menos para o período de início e fim do presente estágio.
+
+O projeto foi inicialmente acordado verbalmente com boa aceitação. Após o listado no capítulo 4, continuou o aceite porém com ressalvas. A principal diz respeito a uso de smartphone ser levemente controlado, por solicitação quando possível deixar em seu armário ou com uso muito restrito, apenas para que não haja um abuso. Outra ressalva, em continuidade à anterior, são as poucas funcionárias que por opção não se utilizam de celulares, devendo assim ser possível selecionar qual funcionário através de alguns logins.
+
+\section{Relação entre Objetivos e os Resultados Obtidos}
+
+Foi atingido o essencial que era o estudo do caso e o estudo de viabilidade, bem como levantamento, requisitos, diagramas, banco de dados.
+Houve atraso tecnológico devido ao investimento necessário em serviço de hospedagem do servidor. Ficando o própria implementação da solução como trabalho futuro.
+
+\section{Trabalhos Futuros}
+
+Como trabalho futuro fica o desenvolvimento e implementação da solução proposta.
+
+O supervisor sugeriu acrescentar a possibilidade de informar o valor da compra para consulta em compras posteriores para comparativo.
+
+Também foi notado pelo supervisor que não há smartphones corporativos e nem todos os funcionários têm aparelhos para o uso proposto, logo deve possibilitar a troca após logado de qual funcionário está informando o item. Foi sugerido e é possível que no próximo ano o celular corporativo deixe de ser um feature phone para ser um smartphone.
+
 \postextual
 
 \bibliographystyle{abntex2-alf}
 \bibliography{references}
+
+\appendix
+\chapter{Anexo I}
+\includepdf[pages=-]{figures/dominio.pdf}
 
 \end{document}
