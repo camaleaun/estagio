@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         command: 'pdflatex paper && bibtex paper && pdflatex paper && pdflatex paper'
       },
       clean: {
-        command: 'rm *.aux *.bbl *.blg *.idx *.log *.toc *.lot *.lof *.loq'
+        command: 'rm *.aux *.bbl *.blg *.brf *.log *.out'
       },
       pdf: {
         command: 'mv paper.pdf ../ && git checkout gh-pages && rm paper.pdf && mv ../paper.pdf ./ && git add paper.pdf && git commit -m "New paper pdf" && git push && git checkout paper'
