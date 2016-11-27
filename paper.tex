@@ -34,11 +34,11 @@ pdftex]{hyperref}
 \maketitle
 
 \begin{abstract}
-  Abstract.
+Even small companies that opt for some kind of system, many times just for legal obligations, don't realize the potential in automate processes. This article analyzes one this processes and develop, through the software development method, a mobile application accessible in most smartphones. This process is a simple shopping list, that beside solving some situations may be the starting point for some automations later. Because the printed list is used during the purchase, the offline access has been proposed and studied the existing technology for it.
 \end{abstract}
 
 \begin{resumo}
-  Resumo.
+Mesmo pequenas empresas que optam por algum tipo de sistema, muitas vezes apenas por obrigações, não percebem o potencial em automatizar processos. Este artigo analisa um desses processos e proprõe, através de método de desenvolvimento de software, uma aplicação móvel acessível pela maioria dos smartphones. Esse processo uma lista de compras simples além de resolver algumas situações pode vir a ser ponto de partida para automatizações posteriores. Devido ao uso lista impressa no ato da compra, o acesso offline foi proposto e a tecnologia existente para tanto estudada.
 \end{resumo}
 
 
@@ -72,24 +72,22 @@ O objetivo neste artigo é o desenvolvimento de aplicação para gerir itens em 
 
 A empresa do estudo é classificada como varejista, comercializa produtos variados: papelaria, utilidades, ferramentas, vestuário, brinquedos, info-eletrônicos, decoração, doces e outros.
 
-O costumeiro é que cada funcionária tenha sempre consigo uma caderneta (no bolso do colete fornecido pela loja) e anote itens que são de sua seção assim que seja percebida a necessidade. Entende-se como necessidade: (\textit{i}) itens que ainda não sejam comercializados anteriormente, mas que um ou mais clientes demonstrem interesse e sejam pertinentes dentro da proposta de loja; (\textit{ii}) itens já comercializadas mas que tenham acabado ou estejam por acabar, bem como possa seu estoque não durar até a próxima compra.
-
-Não é regra ou obrigatório anotar somente itens da seção a qual a funcionária é responsável, muito pelo contrário, prefere-se que seja assim pois antes ``pecar'' pelo excesso que pela falta, será pior um item não ter sido anotado do que estar repetido em listas diferentes. Pois na próxima etapa deve o digitador filtrar para que não permanecem itens duplicados, porém essa ação tem complicação por itens com nomes dúbios (descritos com termos diferentes) ou mesmo quando compostos por várias palavras podem estar em várias ordens ou abreviações.
-
-Utiliza-se um arquivo `pasta de planilha eletrônica' do Microsoft Excel. A planilha utilizada é bem simples, como pode ser visto na Figura  \ref{fig:planilha}, não há fórmulas ou macros, são apenas três colunas nas quais os itens são preenchidos conforme sua classificação. Essa classificação diz respeito ao local em que será comprada a mercadoria, pois alguns tipos são melhor encontrados em lojas especializadas. As categorias utilizadas são: Atacado, Info-eletrônicos e Bijuterias/Acessórios.
+Utiliza-se um arquivo `pasta de planilha eletrônica' do Microsoft Excel. A planilha utilizada é bem simples, como pôde ser visto na Figura  \ref{fig:planilha}, não há fórmulas ou macros, são apenas três colunas nas quais os itens são preenchidos conforme sua classificação. Essa classificação diz respeito ao local em que será comprada a mercadoria, pois alguns tipos são melhor encontrados em lojas especializadas. As categorias utilizadas são: Atacado, Info-eletrônicos e Bijuterias/Acessórios.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.7\textwidth,keepaspectratio]{figures/lista-excel.pdf}
+\includegraphics[width=.9\textwidth,keepaspectratio]{figures/lista-excel.pdf}
 \caption{Planilha utilizada}
 \label{fig:planilha}
 \end{figure}
 
-Quando no processo de compras esta lista é levada impressa conforme Figura \ref{fig:impressao}.
+O costumeiro é que cada funcionária tenha sempre consigo uma caderneta (no bolso do colete fornecido pela loja) e anote itens que são de sua seção assim que seja percebida a necessidade. Entende-se como necessidade: (\textit{i}) itens que ainda não sejam comercializados anteriormente, mas que um ou mais clientes demonstrem interesse e sejam pertinentes dentro da proposta de loja; (\textit{ii}) itens já comercializadas mas que tenham acabado ou estejam por acabar, bem como possa seu estoque não durar até a próxima compra.
+
+Não é regra ou obrigatório anotar somente itens da seção a qual a funcionária é responsável, muito pelo contrário, prefere-se que seja assim pois antes ``pecar'' pelo excesso que pela falta, será pior um item não ter sido anotado do que estar repetido em listas diferentes. Pois na próxima etapa deve o digitador filtrar para que não permaneça itens duplicados, porém essa ação tem complicação por itens com nomes dúbios (descritos com termos diferentes) ou mesmo quando compostos por várias palavras podem estar em várias ordens ou abreviações. Quando no processo de compras esta lista é levada impressa conforme Figura \ref{fig:impressao}.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.7\textwidth,keepaspectratio]{figures/modelo-impressao.pdf}
+\includegraphics[width=.9\textwidth,keepaspectratio]{figures/modelo-impressao.pdf}
 \caption{Modelo de Impressão da Planilha}
 \label{fig:impressao}
 \end{figure}
@@ -121,7 +119,7 @@ Foram desenvolvidos os principais Diagramas UML, inicialmente o \textbf{Diagrama
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.6\textwidth,keepaspectratio]{figures/usecase.pdf}
+\includegraphics[width=.65\textwidth,keepaspectratio]{figures/usecase.pdf}
 \caption{Diagrama de Casos de Uso}
 \label{fig:usecase}
 \end{figure}
@@ -130,7 +128,7 @@ Também foi criado o \textbf{Diagrama de Classes} (ver Figura \ref{fig:classes})
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.5\textwidth,keepaspectratio]{figures/classes.pdf}
+\includegraphics[width=.48\textwidth,keepaspectratio]{figures/classes.pdf}
 \caption{Diagrama de Classes}
 \label{fig:classes}
 \end{figure}
@@ -139,20 +137,20 @@ A modelagem conceitual de banco de dados é descrita por \cite{heuser2009} como 
 
 \begin{figure}[ht]
 \centering
-\includegraphics{figures/mer.pdf}
+\includegraphics[width=.7\textwidth,keepaspectratio]{figures/mer.pdf}
 \caption{Diagrama Entidade-Relacionamento}
 \label{fig:me}
 \end{figure}
 
 \section{Acesso \textit{Offline}}
 
-Com auxílio de \textbf{\textit{Service Workers}} (SW) é possível resolver a navegação \textit{offline}. Está sendo desenvolvido, como explica \cite{swfirstdraft}, por um esforço colaborativo entre grandes empresas como Google, Mozilla e outras, sua implementação tem sido constante principalmente nos navegadores Chrome e Firefox. Realmente excitante para os interessados na competição entre \textit{web} e aplicações nativas nos sistemas operacionais.
+Com auxílio de \textbf{\textit{Service Workers}} (SW) é possível resolver a navegação \textit{offline}. Está sendo desenvolvido, como explica \cite{swfirstdraft}, por um esforço colaborativo entre grandes empresas como Google, Mozilla e outras, sua implementação tem sido constante principalmente nos navegadores Chrome e Firefox. Realmente excitante para os interessados na competição entre web e aplicações nativas nos sistemas operacionais.
 
 Sua implementação no modo mais básico em uma aplicação de página única pode ser considerada simples. Porém sua versatilidade e aplicabilidade é incrivelmente mais extensa. Inicialmente é necessário informar ao navegar o arquivo JavaScript que será o controlador, se comportando como se fosse um proxy local. Para isso utiliza-se o comando de registro (conforme Figura \ref{fig:swregister}), após testar se o navegador é compatível.
 
 \begin{figure}[ht]
 \centering
-\includegraphics{figures/html.pdf}
+\includegraphics[width=.85\textwidth,keepaspectratio]{figures/html.pdf}
 \caption{HTML destacando o registro do SW}
 \label{fig:swregister}
 \end{figure}
@@ -161,7 +159,7 @@ Dentro do arquivo \texttt{sw.js}, notável em Figura \ref{fig:swjs}, constam doi
 
 \begin{figure}[ht]
 \centering
-\includegraphics{figures/sw.pdf}
+\includegraphics[width=.85\textwidth,keepaspectratio]{figures/sw.pdf}
 \caption{Conteúdo do arquivo SW}
 \label{fig:swjs}
 \end{figure}
@@ -183,14 +181,14 @@ Edge & Firefox & Chrome & Safari & Opera & iOS & Android \\ \hline
 A resistência em automatização em pequenos comércios é uma realidade. Nem em situações em que o custo é mínimo e as vantagens são evidentemente mensuradas há o apoio necessário.
 Foi documentada uma proposta para definição de um domínio na internet e contratação do serviço de hospedagem, que devido a outras prioridades não foi devidamente apreciado. Devido a esta falta de aprovação foi aqui considerado como negado, pelo menos para o período de início e fim do presente estágio.
 
-O projeto foi inicialmente acordado verbalmente com boa aceitação. Após o listado como solução proposta, continuou o aceite porém com ressalvas. A principal diz respeito a uso de smartphone ser levemente controlado, por solicitação quando possível deixar em seu armário ou com uso muito restrito, apenas para que não haja um abuso. Outra ressalva, em continuidade à anterior, são as poucas funcionárias que por opção não se utilizam de celulares, devendo assim ser possível selecionar qual funcionário através de alguns logins.
+%O projeto foi inicialmente acordado verbalmente com boa aceitação. Após o listado como solução proposta, continuou o aceite porém com ressalvas. A principal diz respeito a uso de smartphone ser levemente controlado, por solicitação quando possível deixar em seu armário ou com uso muito restrito, apenas para que não haja um abuso. Outra ressalva, em continuidade à anterior, são as poucas funcionárias que por opção não se utilizam de celulares, devendo assim ser possível selecionar qual funcionário através de alguns logins.
 
 Foi atingido o essencial que era o estudo do caso e o estudo de viabilidade, bem como levantamento, requisitos, diagramas, banco de dados.
 Houve atraso tecnológico devido ao investimento necessário em serviço de hospedagem do servidor. Ficando a própria implementação da solução como trabalho futuro.
 
-Como trabalho futuro fica o desenvolvimento e implementação da solução proposta. O supervisor sugeriu acrescentar a possibilidade de informar o valor da compra para consulta em compras posteriores para comparativo.
+%Como trabalho futuro fica o desenvolvimento e implementação da solução proposta. O supervisor sugeriu acrescentar a possibilidade de informar o valor da compra para consulta em compras posteriores para comparativo.
 
-Também foi notado pelo supervisor que não há smartphones corporativos e nem todos os funcionários têm aparelhos para o uso proposto, logo deve possibilitar a troca após logado de qual funcionário está informando o item. Foi sugerido e é possível que no próximo ano o celular corporativo deixe de ser um feature phone para ser um smartphone.
+%Também foi notado pelo supervisor que não há smartphones corporativos e nem todos os funcionários têm aparelhos para o uso proposto, logo deve possibilitar a troca após logado de qual funcionário está informando o item. Foi sugerido e é possível que no próximo ano o celular corporativo deixe de ser um feature phone para ser um smartphone.
 
 \bibliographystyle{sbc}
 \bibliography{references}
