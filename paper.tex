@@ -98,7 +98,7 @@ O sistema é uma aplicação para gerenciar os itens de compras, onde o usuário
 
 Como explicado por \cite{sommerville2011}, a \textbf{Engenharia de Requisitos} é o processo em que são acordados e especificados os detalhes que satisfazem os envolvidos. Há dois níveis de detalhamento dessa especificação, um para clientes e usuários outro aos desenvolvedores, alto nível e abrangente respectivamente.
 
-Os \textbf{Requisitos Funcionais} descrevem o que o sistema deve fazer, normalmente são descritos de modo abstrato para a fácil compreensão por seus usuários \cite{sommerville2011}. Puderam para o \textit{software} ser levantados os requisitos funcionais que seguem:
+Os \textbf{Requisitos Funcionais} descrevem o que deve fazer o sistema, normalmente são descritos de modo abstrato para a fácil compreensão por seus usuários \cite{sommerville2011}. Puderam para o \textit{software} ser levantados os requisitos funcionais que seguem:
 \begin{enumerate}
 \item $[$RF001$]$ Realizar a adição de itens;
 \item $[$RF002$]$ Manter as listas de itens;
@@ -144,9 +144,9 @@ A modelagem conceitual de banco de dados é descrita por \cite{heuser2009} como 
 
 \section{Acesso \textit{Offline}}
 
-Com auxílio de \textbf{\textit{Service Workers}} (SW) é possível resolver a navegação \textit{offline}. Está sendo desenvolvido, como explica \cite{swfirstdraft}, por um esforço colaborativo entre grandes empresas como Google, Mozilla e outras, sua implementação tem sido constante principalmente nos navegadores Chrome e Firefox. Realmente excitante para os interessados na competição entre web e aplicações nativas nos sistemas operacionais.
+Com auxílio de \textbf{\textit{Service Workers}} (SW) é possível resolver a navegação \textit{offline}. Está sendo desenvolvido, como explica \cite{swfirstdraft}, por um esforço colaborativo entre grandes empresas como Google, Mozilla e outras. Sua implementação tem sido constante principalmente nos navegadores Chrome e Firefox. Realmente excitante para os interessados na competição entre web e aplicações nativas nos sistemas operacionais.
 
-Sua implementação no modo mais básico em uma aplicação de página única pode ser considerada simples. Porém sua versatilidade e aplicabilidade é incrivelmente mais extensa. Inicialmente é necessário informar ao navegar o arquivo JavaScript que será o controlador, se comportando como se fosse um proxy local. Para isso utiliza-se o comando de registro (conforme Figura \ref{fig:swregister}), após testar se o navegador é compatível.
+Sua implementação no modo mais básico em uma aplicação de página única pode ser considerada simples. Porém sua versatilidade e aplicabilidade é incrivelmente mais extensa. Inicialmente é necessário informar ao navegar o arquivo JavaScript, que será o controlador se comportando como se fosse um proxy local. Para isso utiliza-se o comando de registro (conforme Figura \ref{fig:swregister}), após testar se o navegador é compatível.
 
 \begin{figure}[ht]
 \centering
@@ -155,7 +155,7 @@ Sua implementação no modo mais básico em uma aplicação de página única po
 \label{fig:swregister}
 \end{figure}
 
-Dentro do arquivo \texttt{sw.js}, notável em Figura \ref{fig:swjs}, constam dois eventos: um de instalação para quando o navegador instala (\textbf{\textit{install}}) de acordo com o registro e outra para captura de ação de rede (\textbf{\textit{fetch}}), onde iria naturalmente requisitar determinado recurso. No evento de instalação lista os arquivos a serem armazenados e no de rede indica a utilizar os arquivos armazenados.
+Dentro do arquivo \texttt{sw.js} (notável em Figura \ref{fig:swjs}) constam dois eventos: um de instalação, para quando o navegador de acordo com o registro instala (\textbf{\textit{install}}) e outro para captura de ação de rede (\textbf{\textit{fetch}}), onde iria naturalmente requisitar determinado recurso. O evento de instalação lista os arquivos a serem armazenados e no de rede indica a utilização dos arquivos armazenados.
 
 \begin{figure}[ht]
 \centering
