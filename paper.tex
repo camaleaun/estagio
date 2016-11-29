@@ -9,6 +9,7 @@
 \usepackage[T1]{fontenc} % Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc} % Codificacao do documento (conversão automática dos acentos)
 % UTF-8 encoding is recommended
+\usepackage{pdfpages}
 
 \sloppy
 
@@ -192,5 +193,11 @@ Houve atraso tecnológico devido ao investimento necessário em serviço de hosp
 
 \bibliographystyle{sbc}
 \bibliography{references}
+
+\includepdf[pages=-]{report.pdf}
+\includepdf[pages=-]{scanned/plano.pdf}
+\includepdf[pages=-]{scanned/termo.pdf}
+\includepdf{scanned/supervisor.pdf}
+\includepdf{scanned/orientador.pdf}
 
 \end{document}
